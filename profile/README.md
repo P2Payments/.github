@@ -36,20 +36,6 @@ Of the 3 planned services (invoicing, ecommerce, booking) I'm still working on b
       
 ## Main repos
 
-### [p2pay-invoicing](https://github.com/p2payserver/p2pay-invoicing)
-To be started
-
-![language](https://img.shields.io/github/languages/top/p2payto/p2pay-invoicing)
-![Stars](https://img.shields.io/github/stars/p2payto/p2pay-invoicing?style=social)
-![Forks](https://img.shields.io/github/forks/p2payto/p2pay-invoicing?style=social)
-
-### [p2pay-ecommerce](https://github.com/p2payserver/p2pay-ecommerce)
-Specs mostly defined
-
-![language](https://img.shields.io/github/languages/top/p2payto/p2pay-ecommerce)
-![Stars](https://img.shields.io/github/stars/p2payto/p2pay-ecommerce?style=social)
-![Forks](https://img.shields.io/github/forks/p2payto/p2pay-ecommerce?style=social)
-
 ### [p2pay-booking](https://github.com/p2payserver/p2pay-booking)
 Under active development
 
