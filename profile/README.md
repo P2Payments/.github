@@ -63,7 +63,7 @@ This is a non-profit open-source project under active development.
 
 For teams looking for production-ready, commercial payment architecture solutions today,
 Blockchange provides independent multi-rail payment advisory:
-https://www.blockchange.com.py/en/#book
+https://www.blockchange.expert/en/#book
 
 
 
