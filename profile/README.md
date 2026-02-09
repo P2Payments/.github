@@ -135,3 +135,11 @@ For teams looking for production-ready, commercial payment architecture solution
 Blockchange provides independent multi-rail payment advisory:
 https://www.blockchange.expert/en/#book
 
+---
+
+## To get support
+
+[Wiki](https://github.com/p2payto/help/wiki)  
+[Discussions](https://github.com/orgs/p2payto/discussions)
+
+
