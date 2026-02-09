@@ -130,7 +130,8 @@ BTCPay Server plugin enabling P2P rail integrations (Peach-based).
 ## To get support
 
 [Wiki](https://github.com/p2payto/help/wiki)  
-[Discussions](https://github.com/orgs/p2payto/discussions)
+[Discussions](https://github.com/orgs/p2payto/discussions)  
+[Telegram group](https://t.me/P2PayTo)
 
 ---
 
