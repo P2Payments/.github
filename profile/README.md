@@ -87,14 +87,14 @@ Live deployment: https://market.p2pay.to
 
 ---
 
-## [p2pay-booking](https://github.com/p2payto/p2pay-booking)
+## [booking-template](https://github.com/p2payto/booking-template)
 Multi-rail booking system with final settlement in bitcoin.
 
 Live deployment: https://booking.p2pay.to
 
-![language](https://img.shields.io/github/languages/top/p2payto/p2pay-booking)
-![Stars](https://img.shields.io/github/stars/p2payto/p2pay-booking?style=social)
-![Forks](https://img.shields.io/github/forks/p2payto/p2pay-booking?style=social)
+![language](https://img.shields.io/github/languages/top/p2payto/booking-template)
+![Stars](https://img.shields.io/github/stars/p2payto/booking-template?style=social)
+![Forks](https://img.shields.io/github/forks/p2payto/booking-template?style=social)
 
 ---
 
