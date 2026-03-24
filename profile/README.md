@@ -1,104 +1,76 @@
 # P2Pay
 
-Open-source, settlement-first Bitcoin payment infrastructure for merchants who want to accept fiat and crypto while receiving final settlement in bitcoin.
+Open-source, modular Bitcoin payment infrastructure. Accept fiat and crypto across multiple rails. Settle in bitcoin or in the stablecoin that works best for your market.
 
-P2Pay is a modular, self-custodial payment architecture built around BTCPay Server, Bitcoin rails, and peer-to-peer integrations. It is designed for cross-border, censorship-resistant, and operationally difficult payment environments.
-
----
-
-## Focus
-
-P2Pay is currently focused on three codebases:
-
-- **mono** — the main repository where active development happens
-- **wallet** — the mobile wallet repository, based on an Aqua fork
-- **miniapp** — an upcoming Nuxt mini app that will run inside the wallet
-
-Older experiments and split repositories are no longer the center of development.
+> **P2Pay is chain-agnostic.** We don't pick chains for ideology — we pick them for what actually works. The settlement layer is Bitcoin or a Bitcoin-native stablecoin, depending on what the market needs and what the best available integration supports. Today that means BTC on-chain, Lightning, and Liquid — because Liquid gives us Bitcoin-native stablecoins (USDt, BRLz, EURx, and more) without altcoin exposure. That may evolve. The principle won't.
 
 ---
 
 ## Core Principles
 
-- **Settlement-first** — bitcoin is the final settlement layer
-- **Multi-rail** — fiat, cards, P2P, and crypto can be used as entry rails
+- **Settlement-first** — bitcoin or a Bitcoin-native stablecoin is the final layer
+- **Chain-agnostic** — best rail wins, always
+- **Multi-rail** — fiat, cards, P2P, and crypto as entry rails
 - **Self-custodial by default**
 - **Vendor-neutral**
 - **KYC-free where legally possible**
 - **Built for failure scenarios, not demo environments**
+- **MIT licensed. Forever open.**
 
 ---
 
-## What P2Pay aims to solve
+## Rail Integrations
 
-P2Pay is built for cases where traditional payment stacks break down:
-
-- merchants that need fiat reach without fiat custody
-- cross-border businesses with unreliable banking access
-- high-risk but legal industries
-- users in emerging markets
-- builders who want modular Bitcoin-native payment infrastructure
-
----
-
-## Architecture
-
-P2Pay is not a traditional payment processor. It is a modular payment architecture where multiple rails can be combined, while keeping bitcoin as the final settlement layer.
-
-Current and planned components include:
-
-- BTCPay Server integration
-- Bitcoin on-chain payments
-- Lightning support
-- USDt rails
-- P2P fiat-to-BTC flows
-- booking and invoicing flows
-- embeddable Nuxt interfaces
-- wallet-connected signing flows
-- API-first integrations
+| Rail | Status | Notes |
+|------|--------|-------|
+| BTC on-chain | ✅ Live | Via BTCPay Server |
+| Lightning | ✅ Live | Via BTCPay Server · Boltz swaps |
+| Liquid Network | ✅ Live | USDt, BRLz, EURx, L-BTC · Aqua wallet · SamRock Protocol for BTCPay linking |
+| Peach P2P | ✅ Live | KYC-free BTC rail |
+| RoboSats P2P | ✅ Live | Lightning-native P2P exchange |
+| Credit / debit card | 🔄 In progress | Up to $800 KYC-free via Guardarian |
+| Russian local payment methods | 🔄 In progress | 4 methods · up to $1,000 |
+| ueno / uPay / uPOS | 📋 Planned | Local rails via Moonshot grant |
 
 ---
 
 ## Active Repositories
 
-## [mono](https://github.com/p2payto/mono)
-Main P2Pay repository.
+### [mono](https://github.com/p2payto/mono)
+Main repository. Core application logic, rail integrations, payment flows, dashboard, and mini-app surfaces. Active development happens here.
 
-This is where active development now happens. It contains the core application logic, rail integrations, payment flows, shared utilities, and app surfaces such as the dashboard and future mini app integrations.
+### [wallet](https://github.com/p2payto/wallet)
+Mobile wallet forked from Aqua. Merchant-controlled signing and self-custodial flows. Liquid-native by default. Part of the P2Pay architecture, not a standalone product.
 
-## [wallet](https://github.com/p2payto/wallet)
-Mobile wallet repository based on an Aqua fork.
-
-The wallet is used for merchant-controlled signing and self-custodial payment flows. It is part of the broader P2Pay architecture, not a standalone generic wallet product.
-
-## [miniapp](https://github.com/p2payto/miniapp)
-Upcoming Nuxt mini app for the wallet.
-
-This app is being prepared as a lightweight embedded interface inside the wallet, extending P2Pay flows through a wallet-native Nuxt experience.
+### [miniapp](https://github.com/p2payto/miniapp)
+Upcoming Nuxt mini app embedded in the wallet. Extends P2Pay payment flows through a wallet-native interface.
 
 ---
 
-## Development Status
+## Who This Is For
 
-- active development is concentrated in **mono**
-- the **wallet** remains a core part of the architecture
-- **miniapp** is the next app surface being added
-- the project is evolving toward a tighter repo structure with fewer moving parts
+P2Pay exists for cases where traditional payment stacks break down:
 
----
+- merchants that need fiat reach without fiat custody
+- cross-border businesses with unreliable banking access
+- high-risk but fully legal industries
+- users in emerging markets
+- builders who want modular Bitcoin-native payment infrastructure
 
-## Support
-
-- [Discussions](https://github.com/orgs/p2payto/discussions)
-- [Telegram group](https://t.me/P2PayTo)
+If payment platforms work fine for you, P2Pay is not for you. If they don't, this is yours.
 
 ---
 
-## Commercial advisory
+## Community
 
-P2Pay is open-source infrastructure under active development.
+- [GitHub Discussions](https://github.com/orgs/p2payto/discussions)
+- [Telegram](https://t.me/P2PayTo)
 
-Commercial architecture advisory, integration design, and implementation support may be offered separately where relevant.
+---
+
+## Commercial Advisory
+
+Commercial architecture advisory, integration design, and implementation support available separately via [Blockchange](https://blockchange.expert).
 
 For teams looking for production-ready, commercial payment architecture solutions today,
 Blockchange provides independent multi-rail payment advisory:
