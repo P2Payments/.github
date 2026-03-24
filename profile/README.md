@@ -30,6 +30,7 @@ Open-source, modular Bitcoin payment infrastructure. Accept fiat and crypto acro
 | RoboSats P2P | ✅ Live | Lightning-native P2P exchange |
 | Credit / debit card | 🔄 In progress | Up to $800 KYC-free via Guardarian |
 | Russian local payment methods | 🔄 In progress | 4 methods · up to $1,000 |
+| Pix (Brazil) | 📋 Planned | Coming on multiple rails |
 | ueno / uPay / uPOS | 📋 Planned | Local rails via Moonshot grant |
 
 ---
