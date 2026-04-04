@@ -24,12 +24,12 @@ If a rail does not already settle into an asset supported by the Aqua wallet for
 ## Rail Integrations
 
 | Rail | Status |
-|------|--------|-------|
+|------|--------|
 | BTC on-chain | Implemented |
 | Lightning | Implemented |
 | USDT onnLiquid Network | Implemented |
-| Peach | Integrated |
-| RoboSats| Integrated |
+| Peach | Implemented |
+| RoboSats| Implemented |
 
 ---
 
