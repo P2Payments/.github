@@ -1,19 +1,17 @@
 # P2Payments
 
-Open-source, modular payment infrastructure built around Bitcoin-based settlement.
+Open-source, modular frictionless payment infrastructure built around Bitcoin and Stablecoin based settlement.
 
-P2Payments combines multiple entry rails — fiat, cards, P2P, and crypto — with settlement toward assets supported by the Aqua wallet fork: BTC on-chain, L-BTC, and stablecoins on Liquid.
+P2Payments combines multiple entry rails — local fiat, cards, P2P, and crypto — with on-chain settlement on Bitcoin or USDT on Polygon or other Stablecoins on Liquid.
 
 ---
 
 ## Approach
 
 P2Payments is designed around a few practical choices:
-
-- **Settlement-first** — the final asset matters more than the entry rail
-- **Multi-rail** — different markets need different ways to pay
-- **Agnostic in practice** — the usable rail and the best conversion path matter more than ideology
 - **Self-custodial by default**
+- **Agnostic in practice** — the usable rail and settlements for best conversion path matter more than ideology
+- **Multi-rail** — different markets need different ways to pay
 - **Modular** — rails and flows can be enabled or left out depending on the use case
 - **Open source** — the public components remain MIT licensed
 
@@ -23,30 +21,32 @@ If a rail does not already settle into an asset supported by the Aqua wallet for
 
 ## Rail Integrations
 
-| Rail | Status | Currency | Payment Methods | Verification |  
-|------|--------|
-| BTC | Implemented | SATS | On-chain & Lightning | None | 
-| USDT | Implemented | USD | Liquid & Polygon | None | 
-| Peach | ongoing | any | any | None | 
-| RoboSats | ongoing | any | any | None |
-| Guardarian | planned | USD, EUR, GBP, CAD, AUD, JPY, | credit/debit cards & Google?Apple pay | Enhanced |
-| Kamipay | planned | BRL | Pix | Standard | 
-| MtPelerin | planned | EUR & CHF | SEPA | Enhanced |
-| Bitzed | planned | ZMW | Mobile | None |
-| Matbea | planned | RUB | | Yandex Pay, Sberbank, Tinkoff, YooMoney, SBP P2P, Mobile phone | None | 
-
+| Rail | Status | Currency | Payment Methods | Settlement | Fee | Verification |  
+|------|--------|--------|--------|--------|--------|--------|
+| BTC | Implemented | SATS | On-chain & Lightning | None | Bitcoin On-chain | None | None |
+| USDT | Implemented | USD | Liquid & Polygon | USDT Liquid & Polygon | None | None |  
+| Peach | ongoing | Global | Any | Bitcoin On-chain | High | None | 
+| RoboSats | ongoing | Global | Any | Bitcoin On-chain  | High | None | 
+| Mostro | planned | Global | Any | Bitcoin On-chain | High | None |
+| Guardarian | planned | USD, EUR, GBP, CAD, AUD, JPY, TRY, PLN, SEK | Credit/Debit Cards & Google/Apple Pay | Bitcoin On-chain | Medium | Enhanced |
+| Paygate | planned | Global | Credit/Debit Cards | USDT Polygon | Medium | None | 
+| DePix | planned | BRL | Pix | BRL on Liquid | Law | None | 
+| Kamipay | planned | BRL | Pix | USDT Polygon | Law | None | 
+| MtPelerin | planned | EUR & CHF | SEPA | Bitcoin On-chain OR USDT Polygon | Low | Standard | 
+| Bitzed | planned | ZMW | Mobile | Bitcoin On-chain | Low | None | 
+| Matbea | planned | RUB | Yandex Pay, Sberbank, Tinkoff, YooMoney, SBP P2P, Mobile phone | Bitcoin On-chain | Low | None | 
 
 ---
 
 ## Active and Planned Repositories
 
 ### [mono](https://github.com/P2Payments/mono)
-Main orchestrator MIT repository. It assembles rails, flows, and supporting services in one workspace. Active development is currently centered here.
+Single user orchestrator MIT repository. It assembles rails, flows, and supporting services in one workspace. Active development is currently centered here.
 
 ### [wallet](https://github.com/P2Payments/wallet)
 A MIT fork of the Aqua Flutter Wallet for P2Payments, with an embedded Nuxt app to manage /mono settings and connect to BTCPay via the Shamrock protocol.
 
-### [app]
+### settings
 Nuxt-based MIT app, intended to handle payment flows through an embedded interface in the /wallet Flutter app.
 
 ### marketplace
@@ -65,6 +65,7 @@ Typical use cases include:
 - users in emerging markets
 - high-risk but lawful businesses
 - builders who want modular, self-hostable payment infrastructure
+- Bitcoiners and crypto enthusiasts
 
 It is not meant to be presented as a universal fit for every merchant.
 
