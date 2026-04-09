@@ -48,7 +48,7 @@ Single user orchestrator MIT repository. It assembles rails, flows, and supporti
 ### [wallet](https://github.com/P2Payments/wallet)
 A MIT fork of the Aqua Flutter Wallet for P2Payments, with an embedded Nuxt app to manage /mono settings and connect to BTCPay via the Shamrock protocol.
 
-### settings
+### dashboard
 Nuxt-based MIT app, intended to handle payment flows through an embedded interface in the /wallet Flutter app.
 
 ### marketplace
