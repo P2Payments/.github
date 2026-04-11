@@ -90,6 +90,4 @@ The repositories should be read as active infrastructure work, not as a finished
 
 ---
 
-## Advisory
-
-Commercial architecture advisory, integration design, and implementation support are available separately via [Blockchange](https://blockchange.expert).
+### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
