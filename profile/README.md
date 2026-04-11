@@ -17,7 +17,7 @@ P2Pagos is designed around a few practical choices:
 - **Agnostic in practice** — the usable rail and settlements for best conversion path matter more than ideology
 - **Multi-rail** — different markets need different ways to pay
 - **Modular** — rails and flows can be enabled or left out depending on the use case
-- **Open source** — the public components remain MIT licensed
+- - **Open source** — the public components remain MIT licensed, with long-term maintenance and development supported by revenue from the paid closed-source offering
 
 If a rail does not already settle into an asset supported by the Aqua wallet fork, P2Pagos aims to convert further into the supported asset that is cheapest and most functional for that case.
 
