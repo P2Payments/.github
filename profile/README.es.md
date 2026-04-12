@@ -81,10 +81,13 @@ Los repositorios deben leerse como trabajo activo de infraestructura, no como un
 
 ---
 
-## Comunidad
+## Comunidad y contacto
 
-- [Discusiones de GitHub](https://github.com/orgs/P2Pagos/discussions)  
+- [Debates en GitHub](https://github.com/orgs/P2Pagos/discussions)
 - [Grupo de Telegram](https://t.me/P2Pagos)
+- [p2pagos@p2pay.to](mailto:p2pagos@p2pay.to) con PGP opcional [A1786A2CF6C5B65FDB4519F17E425F745D4EE866](https://pgp.p2pay.to)
+ 
+---
 
 ### Proyecto inspirado en [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
 
