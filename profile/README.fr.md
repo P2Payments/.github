@@ -26,8 +26,7 @@ Si un rail ne règle pas déjà dans un actif pris en charge par le fork d’Aqu
 ```mermaid
 flowchart LR
 
-  subgraph walletWrap[" "]
-    wallet["/wallet"]
+  subgraph walletWrap["/wallet"]
     walletPlatform["(iOS et Android)"]
     seedMono["phrase de récupération"]
     seedMarket["phrase de récupération"]
@@ -68,7 +67,6 @@ flowchart LR
   style builtTeam fill:transparent,stroke:transparent,color:#999
   style walletPlatform fill:transparent,stroke:transparent,color:#999
 
-  click wallet "https://github.com/P2Pagos/wallet" "_blank"
   click otherWallet "https://github.com/P2Pagos/wallet" "_blank"
   click mono "https://github.com/P2Pagos/mono" "_blank"
 ```
