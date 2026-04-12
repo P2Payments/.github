@@ -21,6 +21,59 @@ Si un riel no liquida ya en un activo soportado por el fork de Aqua Wallet, P2Pa
 
 ---
 
+
+```mermaid
+flowchart LR
+
+  subgraph walletWrap[" "]
+    wallet["/wallet"]
+    walletPlatform["(iOS y Android)"]
+    seedMono["frase semilla"]
+    seedMarket["frase semilla"]
+    seedTeam["frase semilla / xpub"]
+  end
+
+  mono["/mono"]
+  monoBtcpay["Servidor BTCPay"]
+
+  subgraph docker["Docker"]
+    marketplace["/marketplace"]
+    marketBtcpay["Servidor BTCPay"]
+  end
+
+  team["/team"]
+  otherWallet["/wallet"]
+
+  builtMarket["basado en"]
+  builtTeam["basado en"]
+
+  seedMono --> mono
+  seedMarket --> marketplace
+  seedTeam -.-> team
+
+  otherWallet --> marketplace
+
+  mono --> monoBtcpay
+  marketplace --> marketBtcpay
+
+  marketplace -.-> builtMarket
+  builtMarket -.-> mono
+
+  team -.-> builtTeam
+  builtTeam -.-> mono
+
+  style team stroke-dasharray: 6 6
+  style builtMarket fill:transparent,stroke:transparent,color:#999
+  style builtTeam fill:transparent,stroke:transparent,color:#999
+  style walletPlatform fill:transparent,stroke:transparent,color:#999
+
+  click wallet "https://github.com/P2Pagos/wallet" "_blank"
+  click otherWallet "https://github.com/P2Pagos/wallet" "_blank"
+  click mono "https://github.com/P2Pagos/mono" "_blank"
+```
+
+---
+
 ## Integraciones de rieles
 
 | Rail | Estado | Moneda | Métodos de pago | Liquidación | Comisión | Verificación |
