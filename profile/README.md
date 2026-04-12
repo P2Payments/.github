@@ -34,8 +34,8 @@ If a rail does not already settle into an asset supported by the Aqua wallet for
 | Mostro | planned | Global | Any | Bitcoin On-chain | High | None |
 | Guardarian | planned | USD, EUR, GBP, CAD, AUD, JPY, TRY, PLN, SEK | Credit/Debit Cards & Google/Apple Pay | Bitcoin On-chain | Medium | Enhanced |
 | Paygate | planned | Global | Credit/Debit Cards | USDT Polygon | Medium | None | 
-| DePix | planned | BRL | Pix | BRL on Liquid | Law | None | 
-| Kamipay | planned | BRL | Pix | USDT Polygon | Law | None | 
+| DePix | planned | BRL | Pix | BRL on Liquid | Low | None | 
+| Kamipay | planned | BRL | Pix | USDT Polygon | Low | None | 
 | MtPelerin | planned | EUR & CHF | SEPA | Bitcoin On-chain OR USDT Polygon | Low | Standard | 
 | Bitzed | planned | ZMW | Mobile | Bitcoin On-chain | Low | None | 
 | Matbea | planned | RUB | Yandex Pay, Sberbank, Tinkoff, YooMoney, SBP P2P, Mobile phone | Bitcoin On-chain | Low | None | 
