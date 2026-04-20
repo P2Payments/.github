@@ -15,8 +15,6 @@ P2Pagos usa [BTCPay Server](https://github.com/btcpayserver/btcpayserver) como b
 
 [Aqua Wallet](https://github.com/AquaWallet/aqua-wallet) fue elegida porque ya soporta por defecto liquidación en **btc on-chain, múltiples stablecoins (USD y BRL por ahora)**, y puede integrarse desde BTCPay Server mediante el protocolo Shamrock con un flujo de conexión por QR.
 
-P2Pagos combina múltiples **inbound rails** — fiat local, tarjetas, P2P y cripto — con liquidación en Bitcoin y stablecoins seleccionadas. El soporte para Polygon está planificado para integrar al menos dos de los rails ya listados abajo. Para cada chain y ruta de payout soportada, el objetivo es ser transparentes sobre qué es nativo, qué es agregado por P2Pagos y qué depende de proveedores externos.
-
 Cuando el cashout local directo todavía no es nativo, P2Pagos ofrece guías prácticas sobre wallets externas compatibles, tarjetas y herramientas de off-ramp para mejorar la usabilidad real en Latinoamérica y otras regiones soportadas. Por ejemplo, sobre todas las chains de liquidación actualmente planificadas, ya contemplamos wallets y servicios como [Belo](https://belo.app), [Revolut](https://www.revolut.com) y [Offramp](https://offramp.xyz), incluyendo caminos compatibles con tarjeta y Google Pay / Apple Pay, mientras que opciones más privacy-friendly de tarjeta y Google Pay podrían sumarse más adelante mediante trabajo planificado con la API de FixedFloat o colaboración con el emisor.
 
 ---
@@ -53,6 +51,9 @@ monoBtcpay["BTCPay Server (MIT)"]
 subgraph docker["Docker"]
   marketplace["/marketplace (closed-source)"]
   marketBtcpay["BTCPay Server (MIT)"]
+  bridge["/bridge"]
+  kyc["/kyc"]
+  pyCompliance["/py-compliance"]
 end
 
 team["/team"]
@@ -77,6 +78,10 @@ builtMarket -.-> mono
 team -.-> builtTeam
 builtTeam -.-> mono
 
+marketplace --> bridge
+marketplace --> kyc
+marketplace --> pyCompliance
+
 style team stroke-dasharray: 6 6
 style builtMarket fill:transparent,stroke:transparent,color:#999
 style builtTeam fill:transparent,stroke:transparent,color:#999
@@ -84,7 +89,16 @@ style walletPlatform fill:transparent,stroke:transparent,color:#999
 
 click otherWallet "https://github.com/P2Pagos/wallet" "_blank"
 click mono "https://github.com/P2Pagos/mono" "_blank"
+click bridge "https://github.com/P2Pagos/bridge" "_blank"
+click kyc "https://github.com/P2Pagos/kyc" "_blank"
+click pyCompliance "https://github.com/P2Pagos/py-compliance" "_blank"
 ```
+
+> Los repositorios closed-source solo están disponibles para miembros del equipo y no para colaboradores externos. Algunos módulos podrían open-sourcearse en una etapa posterior.
+
+> Estas integraciones son closed-source porque requieren verificación reforzada para el administrador del marketplace y para los usuarios involucrados en transacciones de alto valor. También financian todo el desarrollo open-source.
+
+> Para estas integraciones, Blockchange.expert puede asesorar un plan estructurado tanto bajo una EAS paraguaya como bajo una LLC estadounidense. Este servicio de consultoría está listo para desplegarse hoy mismo reservando una integration call en https://www.blockchange.expert/en/#call o por email de forma asíncrona.
 
 ---
 
@@ -127,8 +141,6 @@ Código de referido para un mes gratis: [Freedomia](https://www.freedomia.io/a/p
 | [tor](https://github.com/P2Pagos/mono/tree/main/services/tor) | testing | global | reverse proxy Tor para integraciones onion y basadas en Tor | habilitado si lo consume un rail habilitado |
 | [cors](https://github.com/P2Pagos/mono/tree/main/services/cors) | testing | global | reverse proxy CORS para APIs objetivo | habilitado si lo consume un rail habilitado |
 | [market](https://github.com/P2Pagos/mono/tree/main/services/market) | testing | global | agregación de mercado y ofertas externas | habilitado si lo consume un rail habilitado |
-| kyc-kyb | defined | worldwide | KYC / KYB | opcional, deshabilitado por defecto |
-| invoicing-reporting-py | in planning | Paraguay | invoicing and reporting | opcional, deshabilitado por defecto |
 
 ---
 
@@ -146,11 +158,23 @@ Un fork MIT de Aqua Flutter Wallet para P2Pagos, con una app Nuxt embebida para 
 
 ### dashboard
 
-App basada en Nuxt, pensada para manejar flujos de pago mediante una interfaz embebida dentro de la app Flutter de /wallet.
+App MIT basada en Nuxt, pensada para manejar flujos de pago mediante una interfaz embebida dentro de la app Flutter de /wallet.
 
 ### marketplace
 
 Repositorio closed-source para integraciones marketplace multiusuario del repo /mono.
+
+### bridge
+
+Módulo de integración closed-source para orquestación de recepción y payout fiat basada en Bridge.xyz dentro de flujos de marketplace.
+
+### kyc
+
+Módulo de integración closed-source para verificación reforzada, controles a nivel de administrador y flujos de onboarding de usuarios vinculados a transacciones de alto valor en el marketplace.
+
+### py-compliance
+
+Módulo paraguayo closed-source para contabilidad, reporting y operaciones de marketplace orientadas al cumplimiento local.
 
 ---
 
