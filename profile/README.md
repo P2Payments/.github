@@ -183,4 +183,4 @@ Some components exist as working integrations, others are partial, experimental,
 
 ---
 
-### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
+### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/) in 2014.
