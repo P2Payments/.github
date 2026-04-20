@@ -3,31 +3,31 @@
 > Translations may be outdated.  
 > Las traducciones pueden estar desactualizadas.
 
-# P2Pagos
+# P2Pagos — Open-Source Multi-Rail Payment Infrastructure
 
-Open-source, modular, and agnostic-by-design payment infrastructure built around self-custodial settlement, designed to make cross-border payment flows more practical across markets, rails, and jurisdictions.
+Open-source, modular, and agnostic-by-design payment infrastructure for businesses and users that need practical multi-rail payment flows, self-custodial settlement, and more flexible cross-border money movement.
 
-P2Pagos uses [BTCPay Server](https://github.com/btcpayserver/btcpayserver) as the backend and an [Aqua Wallet](https://github.com/AquaWallet/aqua-wallet) fork as the default settlement wallet. Aqua was chosen because it already supports Bitcoin on-chain settlement by default, supports stablecoin-based settlement flows already relevant to the stack today, and can be integrated from BTCPay Server through the Shamrock protocol with a QR-based connection flow.
+P2Pagos is built around **inbound rails**, **multi-rail offramp paths**, and self-custodial settlement. It is designed to make payment architecture more practical across markets, rails, currencies, and jurisdictions, especially where traditional payment access is fragmented, limited, or overly dependent on a single provider.
 
-P2Pagos combines multiple entry rails — local fiat, cards, P2P, and crypto — with settlement in Bitcoin and selected stablecoins. Polygon support is planned in order to integrate at least two of the rails already listed in the planned section. For every chain and payout path supported, the goal is to remain transparent about what is native, what is added by P2Pagos, and what depends on external providers.
+P2Pagos uses [BTCPay Server](https://github.com/btcpayserver/btcpayserver) as the backend and an [Aqua Wallet](https://github.com/AquaWallet/aqua-wallet) fork as the default settlement wallet. Aqua was chosen because it already supports settlement in **btc on-chain, multiple stablecoins (USD and BRL for now)** by default, and can be integrated from BTCPay Server through the Shamrock protocol with a QR-based connection flow.
 
-Where direct local cashout is not yet native, P2Pagos will do its best to provide practical usage guidance around compatible external wallets, cards, and off-ramp tools — including Apple Pay / Google Pay compatible options where available — to improve real usability in Latin America and other supported regions. Additional cashout paths can also be layered in modularly, as shown in the tables below.
+P2Pagos combines multiple **inbound rails** — local fiat, cards, P2P, and crypto — with settlement in Bitcoin and selected stablecoins. Polygon support is planned in order to integrate at least two of the rails already listed below. For every chain and payout path supported, the goal is to remain transparent about what is native, what is added by P2Pagos, and what depends on external providers.
 
-It is designed for users and businesses that need simpler self-custodial payment flows, especially where traditional payment access is limited, fragmented, or overly dependent on a single provider.
+Where direct local cashout is not yet native, P2Pagos will do its best to provide practical guidance around compatible external wallets, cards, and off-ramp tools — including Apple Pay / Google Pay compatible options where available — to improve real usability in Latin America and other supported regions. Additional **multi-rail offramp** paths can also be layered in modularly, as shown in the tables below.
 
 ---
 
-## Approach
+## Multi-Rail Payment Architecture Approach
 
 P2Pagos is designed around a few practical choices:
 
 - **Self-custodial by default**
-- **Agnostic in practice** — the usable rail and settlements for best conversion path matter more than ideology
-- **Multi-rail** — different markets need different ways to pay
-- **Modular** — rails, flows, and services can be enabled or left out depending on the use case
+- **Agnostic in practice** — the usable rail and settlement path matter more than ideology
+- **Multi-rail by design** — different markets need different ways to pay and cash out
+- **Modular** — inbound rails, offramps, flows, and services can be enabled or left out depending on the use case
 - **Open source** — the public components remain MIT licensed, with long-term maintenance and development supported by revenue from the paid closed-source offering
 
-If a rail does not already settle into an asset supported by the Aqua wallet fork, P2Pagos aims to convert further into the supported asset that is cheapest and most functional for that case.
+If an inbound rail does not already settle into an asset supported by the Aqua wallet fork, P2Pagos aims to convert further into the supported asset that is cheapest and most functional for that case.
 
 ---
 
@@ -81,15 +81,15 @@ click mono "https://github.com/P2Pagos/mono" "_blank"
 
 ---
 
-## Rail Integrations
+## Inbound Multi-Rails
 
 | Rail | Status | Currency | Payment Methods | Settlement | Fee | Verification |
 |------|--------|----------|-----------------|------------|-----|--------------|
 | BTC | Implemented | SATS | On-chain & Lightning | Bitcoin On-chain | None | None |
 | USDT | Implemented | USD | Liquid & Polygon | USDT Liquid & Polygon | None | None |
-| Peach *(p2p-api-integration)* | ongoing | Global | Any | Bitcoin On-chain | High | None |
-| RoboSats *(p2p-api-integration)* | ongoing | Global | Any | Bitcoin On-chain | High | None |
-| Mostro *(p2p-api-integration)* | planned | Global | Any | Bitcoin On-chain | High | None |
+| Peach *(p2p-api-integration)* | testing | Global | Any | Bitcoin On-chain | High | None |
+| RoboSats *(p2p-api-integration)* | testing | Global | Any | Bitcoin On-chain | High | None |
+| Mostro *(p2p-api-integration)* | evaluating | Global | Any | Bitcoin On-chain | High | None |
 | Guardarian *(cex-api-integration)* | planned | USD, EUR, GBP, CAD, AUD, JPY, TRY, PLN, SEK | Credit/Debit Cards & Google/Apple Pay | Bitcoin On-chain | Medium | Enhanced |
 | Paygate *(cex-api-integration)* | planned | Global | Credit/Debit Cards | USDT Polygon | Medium | None |
 | DePix *(cex-api-integration)* | planned | BRL | Pix | BRL on Liquid | Low | None |
@@ -100,7 +100,7 @@ click mono "https://github.com/P2Pagos/mono" "_blank"
 
 ---
 
-## Cashout Integrations
+## Multi-Rail Offramp
 
 | Cashout | Status | Currency | Payment Methods | Verification |
 |---------|--------|----------|-----------------|--------------|
@@ -130,7 +130,7 @@ Referral code for one month free: [Freedomia](https://www.freedomia.io/a/p2pagos
 
 Single user orchestrator MIT repository.
 
-It assembles rails, flows, and supporting services into one workspace. Active development is currently centered here.
+It assembles inbound rails, settlement flows, and supporting services into one workspace. Active development is currently centered here.
 
 ### [wallet](https://github.com/P2Pagos/wallet)
 
@@ -146,24 +146,25 @@ Closed-source repository for multi-user marketplace integrations of the /mono re
 
 ---
 
-## Intended Use Cases
+## Use Cases for Multi-Rail Payments
 
 P2Pagos is aimed at cases where standard payment stacks are too limited, too fragile, or too dependent on a single provider.
 
 Typical use cases include:
 
 - cross-border businesses
+- businesses that need multi-rail inbound payments
 - merchants that want crypto settlement with broader payment reach
 - users in emerging markets
 - high-risk but lawful businesses
-- builders who want modular, self-hostable payment infrastructure
+- builders that want modular, self-hostable payment infrastructure
 - Bitcoiners and crypto enthusiasts
 
 It is not meant to be presented as a universal fit for every merchant.
 
 ---
 
-## Status
+## Current Status
 
 P2Pagos is still evolving.
 
@@ -180,9 +181,4 @@ Some components exist as working integrations, others are partial, experimental,
 ---
 
 ### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
-- [Telegram Group](https://t.me/P2Pagos)
-- [p2pagos@p2pay.to](mailto:p2pagos@p2pay.to) with optional PGP [A1786A2CF6C5B65FDB4519F17E425F745D4EE866](https://pgp.p2pay.to)
-
----
-
 ### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
