@@ -7,9 +7,9 @@
 
 Open-source, modular, and agnostic-by-design payment infrastructure for businesses and users that need practical multi-rail payment flows, self-custodial settlement, and more flexible cross-border money movement.
 
-P2Pagos is built around **inbound rails**, **multi-rail offramp paths**, and self-custodial settlement. It is designed to make payment architecture more practical across markets, rails, currencies, and jurisdictions, especially where traditional payment access is fragmented, limited, or overly dependent on a single provider.
+P2Pagos is built around **inbound rails**, **multi-rail offramp** and self-custodial settlement. It is designed to make payment architecture more practical across markets, rails, currencies, and jurisdictions, especially where traditional payment access is fragmented, limited, or overly dependent on a single provider.
 
-P2Pagos uses [BTCPay Server](https://github.com/btcpayserver/btcpayserver) as the backend and an [Aqua Wallet](https://github.com/AquaWallet/aqua-wallet) fork as the default settlement wallet. BTCPay Server was chosen because it is a battle-tested, widely adopted, and community-maintained API and GUI backend with some built-in rails, and because we actively contribute to the BTCPay core and plugin ecosystem. Aqua was chosen because it already supports settlement in **btc on-chain, multiple stablecoins (USD and BRL for now)** by default, and can be integrated from BTCPay Server through the Shamrock protocol with a QR-based connection flow.
+P2Pagos uses [BTCPay Server](https://github.com/btcpayserver/btcpayserver) as the backend and an [Aqua Wallet](https://github.com/AquaWallet/aqua-wallet) fork as the default settlement wallet. BTCPay Server was chosen because it is a battle-tested, widely adopted, and community-maintained API and GUI backend with some built-in rails, and because we actively contribute to the BTCPay ecosystem across core and plugins ([gui](https://github.com/search?q=involves%3Alearntheropes+repo%3Abtcpayserver-tether%2FBTCPayServer.Plugins.USDt&type=issues), [api](https://api.github.com/search/issues?q=involves%3Alearntheropes+repo%3Abtcpayserver-tether%2FBTCPayServer.Plugins.USDt)). Aqua was chosen because it already supports settlement in **btc on-chain, multiple stablecoins (USD and BRL for now)** by default, and can be integrated from BTCPay Server through the Shamrock protocol with a QR-based connection flow.
 
 P2Pagos combines multiple **inbound rails** — local fiat, cards, P2P, and crypto — with settlement in Bitcoin and selected stablecoins. Polygon support is planned in order to integrate at least two of the rails already listed below. For every chain and payout path supported, the goal is to remain transparent about what is native, what is added by P2Pagos, and what depends on external providers.
 
@@ -87,8 +87,8 @@ click mono "https://github.com/P2Pagos/mono" "_blank"
 |------|--------|----------|-----------------|------------|-----|--------------|
 | BTC | Implemented | SATS | On-chain & Lightning | Bitcoin On-chain | None | None |
 | USDT | Implemented | USD | Liquid & Polygon | USDT Liquid & Polygon | None | None |
-| Peach *(p2p-api-integration)* | testing | Global | Any | Bitcoin On-chain | High | None |
-| RoboSats *(p2p-api-integration)* | testing | Global | Any | Bitcoin On-chain | High | None |
+| [Peach](https://github.com/P2Pagos/mono/tree/main/rails/peach) *(p2p-api-integration)* | testing | Global | Any | Bitcoin On-chain | High | None |
+| [RoboSats](https://github.com/P2Pagos/mono/tree/main/rails/robosats) *(p2p-api-integration)* | testing | Global | Any | Bitcoin On-chain | High | None |
 | Mostro *(p2p-api-integration)* | evaluating | Global | Any | Bitcoin On-chain | High | None |
 | Guardarian *(cex-api-integration)* | planned | USD, EUR, GBP, CAD, AUD, JPY, TRY, PLN, SEK | Credit/Debit Cards & Google/Apple Pay | Bitcoin On-chain | Medium | Enhanced |
 | Paygate *(cex-api-integration)* | planned | Global | Credit/Debit Cards | USDT Polygon | Medium | None |
@@ -116,9 +116,10 @@ Referral code for one month free: [Freedomia](https://www.freedomia.io/a/p2pagos
 
 | Service | Status | Scope | Purpose | Default |
 |---------|--------|-------|---------|---------|
-| ip-detection | testing | global | IP geolocation and currency detection | optional by default |
-| tor | testing | global | Tor reverse proxy for onion and Tor-based integrations | optional by default |
-| market | testing | global | market aggregation and external offers | optional by default |
+| [ip-detection](https://github.com/P2Pagos/mono/tree/main/services/ip-detection) | testing | global | IP geolocation and currency detection | optional by default |
+| [tor](https://github.com/P2Pagos/mono/tree/main/services/tor) | testing | global | Tor reverse proxy for onion and Tor-based integrations | optional by default |
+| [cors](https://github.com/P2Pagos/mono/tree/main/services/cors) | testing | global | CORS reverse proxy for target APIs | optional by default |
+| [market](https://github.com/P2Pagos/mono/tree/main/services/market) | testing | global | market aggregation and external offers | optional by default |
 | kyc-kyb | defined | worldwide | KYC / KYB | optional by default |
 | invoicing-reporting-py | in planning | Paraguay | invoicing and reporting | optional by default |
 
@@ -180,5 +181,4 @@ Some components exist as working integrations, others are partial, experimental,
 
 ---
 
-### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
 ### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/)
