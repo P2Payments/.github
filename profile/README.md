@@ -58,7 +58,7 @@ otherWallet["/wallet (MIT)"]
 builtMarket["built on"]
 builtTeam["built on"]
 
-dashboard["/dashboard"]
+dashboard["/dashboard (MIT)"]
 
 seedMono --> mono
 seedMarket --> marketplace
