@@ -38,25 +38,27 @@ If an inbound rail does not already settle into an asset supported by the Aqua w
 ```mermaid
 flowchart LR
 
-subgraph walletWrap["/wallet"]
-  walletPlatform["(iOS & Android)"]
+subgraph walletWrap["/wallet (MIT)"]
+  walletPlatform["Aqua fork (MIT) / (iOS & Android)"]
   seedMono["seed phrase"]
   seedMarket["seed phrase"]
   seedTeam["seed phrase / xpub"]
 end
 
-mono["/mono"]
-monoBtcpay["BTCPay Server"]
+mono["/mono (MIT)"]
+monoBtcpay["BTCPay Server (MIT)"]
 
 subgraph docker["Docker"]
-  marketplace["/marketplace"]
-  marketBtcpay["BTCPay Server"]
+  marketplace["/marketplace (closed-source)"]
+  marketBtcpay["BTCPay Server (MIT)"]
 end
 
 team["/team"]
-otherWallet["/wallet"]
+otherWallet["/wallet (MIT)"]
 builtMarket["built on"]
 builtTeam["built on"]
+
+dashboard["/dashboard"]
 
 seedMono --> mono
 seedMarket --> marketplace
@@ -65,6 +67,7 @@ otherWallet --> marketplace
 
 mono --> monoBtcpay
 marketplace --> marketBtcpay
+dashboard --> marketplace
 
 marketplace -.-> builtMarket
 builtMarket -.-> mono
