@@ -119,9 +119,9 @@ Referral code for one month free: [Freedomia](https://www.freedomia.io/a/p2pagos
 | Service | Status | Scope | Purpose | Default |
 |---------|--------|-------|---------|---------|
 | [ip-detection](https://github.com/P2Pagos/mono/tree/main/services/ip-detection) | testing | global | IP geolocation and currency detection | optional by default |
-| [tor](https://github.com/P2Pagos/mono/tree/main/services/tor) | testing | global | Tor reverse proxy for onion and Tor-based integrations | optional by default |
-| [cors](https://github.com/P2Pagos/mono/tree/main/services/cors) | testing | global | CORS reverse proxy for target APIs | optional by default |
-| [market](https://github.com/P2Pagos/mono/tree/main/services/market) | testing | global | market aggregation and external offers | optional by default |
+| [tor](https://github.com/P2Pagos/mono/tree/main/services/tor) | testing | global | Tor reverse proxy for onion and Tor-based integrations | enabled if consumed by an enabled rail |
+| [cors](https://github.com/P2Pagos/mono/tree/main/services/cors) | testing | global | CORS reverse proxy for target APIs | enabled if consumed by an enabled rail |
+| [market](https://github.com/P2Pagos/mono/tree/main/services/market) | testing | global | market aggregation and external offers | enabled if consumed by an enabled rail |
 | kyc-kyb | defined | worldwide | KYC / KYB | optional by default |
 | invoicing-reporting-py | in planning | Paraguay | invoicing and reporting | optional by default |
 
