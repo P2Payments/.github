@@ -120,12 +120,12 @@ Código de referido para un mes gratis: [Freedomia](https://www.freedomia.io/a/p
 
 | Servicio | Estado | Alcance | Propósito | Default |
 |---------|--------|---------|-----------|---------|
-| [ip-detection](https://github.com/P2Pagos/mono/tree/main/services/ip-detection) | testing | global | geolocalización IP y detección de moneda | optional by default |
+| [ip-detection](https://github.com/P2Pagos/mono/tree/main/services/ip-detection) | testing | global | geolocalización IP y detección de moneda | habilitado por defecto para detección de moneda basada en la ubicación por país de Cloudflare; los detalles se cubrirán en un post aparte sobre una vulnerabilidad de Proton VPN ignorada por el equipo de seguridad; ipinfo requiere una API key gratuita de por vida |
 | [tor](https://github.com/P2Pagos/mono/tree/main/services/tor) | testing | global | reverse proxy Tor para integraciones onion y basadas en Tor | habilitado si lo consume un rail habilitado |
 | [cors](https://github.com/P2Pagos/mono/tree/main/services/cors) | testing | global | reverse proxy CORS para APIs objetivo | habilitado si lo consume un rail habilitado |
 | [market](https://github.com/P2Pagos/mono/tree/main/services/market) | testing | global | agregación de mercado y ofertas externas | habilitado si lo consume un rail habilitado |
-| kyc-kyb | defined | worldwide | KYC / KYB | optional by default |
-| invoicing-reporting-py | in planning | Paraguay | invoicing and reporting | optional by default |
+| kyc-kyb | defined | worldwide | KYC / KYB | opcional, deshabilitado por defecto |
+| invoicing-reporting-py | in planning | Paraguay | invoicing and reporting | opcional, deshabilitado por defecto |
 
 ---
 
