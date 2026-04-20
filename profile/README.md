@@ -51,6 +51,9 @@ monoBtcpay["BTCPay Server (MIT)"]
 subgraph docker["Docker"]
   marketplace["/marketplace (closed-source)"]
   marketBtcpay["BTCPay Server (MIT)"]
+  bridge["/bridge"]
+  kyc["/kyc"]
+  pyCompliance["/py-compliance"]
 end
 
 team["/team"]
@@ -75,6 +78,10 @@ builtMarket -.-> mono
 team -.-> builtTeam
 builtTeam -.-> mono
 
+marketplace --> bridge
+marketplace --> kyc
+marketplace --> pyCompliance
+
 style team stroke-dasharray: 6 6
 style builtMarket fill:transparent,stroke:transparent,color:#999
 style builtTeam fill:transparent,stroke:transparent,color:#999
@@ -82,7 +89,16 @@ style walletPlatform fill:transparent,stroke:transparent,color:#999
 
 click otherWallet "https://github.com/P2Pagos/wallet" "_blank"
 click mono "https://github.com/P2Pagos/mono" "_blank"
+click bridge "https://github.com/P2Pagos/bridge" "_blank"
+click kyc "https://github.com/P2Pagos/kyc" "_blank"
+click pyCompliance "https://github.com/P2Pagos/py-compliance" "_blank"
 ```
+
+> Closed-source repos are only available to team members and not to external collaborators. Some modules may be open-sourced at a later stage.
+
+> These integrations are closed source because they require enhanced verification for the marketplace admin and for users involved in high-value transactions. They also finance all open-source development.
+
+> For these integrations, Blockchange.expert can advise a structured plan either under a Paraguay EAS or a US LLC. This consultancy service is ready to deploy today by booking an integration call at https://www.blockchange.expert/en/#call or by email asynchronously.
 
 ---
 
@@ -125,8 +141,6 @@ Referral code for one month free: [Freedomia](https://www.freedomia.io/a/p2pagos
 | [tor](https://github.com/P2Pagos/mono/tree/main/services/tor) | testing | global | Tor reverse proxy for onion and Tor-based integrations | enabled if consumed by an enabled rail |
 | [cors](https://github.com/P2Pagos/mono/tree/main/services/cors) | testing | global | CORS reverse proxy for target APIs | enabled if consumed by an enabled rail |
 | [market](https://github.com/P2Pagos/mono/tree/main/services/market) | testing | global | market aggregation and external offers | enabled if consumed by an enabled rail |
-| kyc-kyb | defined | worldwide | KYC / KYB | optional, disabled by default |
-| invoicing-reporting-py | in planning | Paraguay | invoicing and reporting | optional, disabled by default |
 
 ---
 
@@ -149,6 +163,18 @@ Nuxt-based MIT app, intended to handle payment flows through an embedded interfa
 ### marketplace
 
 Closed-source repository for multi-user marketplace integrations of the /mono repo.
+
+### bridge
+
+Closed-source integration module for Bridge.xyz-based fiat reception and payout orchestration within marketplace flows.
+
+### kyc
+
+Closed-source integration module for enhanced verification, admin-level checks, and user onboarding flows tied to high-value marketplace transactions.
+
+### py-compliance
+
+Closed-source Paraguay-specific module for accounting, reporting, and local compliance-oriented marketplace operations.
 
 ---
 
@@ -186,4 +212,4 @@ Some components exist as working integrations, others are partial, experimental,
 
 ---
 
-### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/) in 2014.
+### Project inspired by [**BitPagos**](https://web.archive.org/web/20141225131358/https://www.bitpagos.com/es/) in 2014
