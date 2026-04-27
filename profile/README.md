@@ -129,7 +129,7 @@ click pyCompliance "https://github.com/P2Pagos/py-compliance" "_blank"
 | Ueno Bank | post [moonshot.md](moonshot.md) | PYG / USD | bank transfer / card-popup | standard |
 | Freedomia Card | planned | USD limited settlements | card / Google Pay | none |
 
-Referral code for one month free: [Freedomia](https://www.freedomia.io/a/p2pagos)
+Referral code for two months [Freedomia](https://www.freedomia.io/a/p2pagos) free plan.
 
 ---
 
